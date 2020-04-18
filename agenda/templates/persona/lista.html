@@ -1,0 +1,30 @@
+<!-- head para PC -->
+{% extends "persona/base_persona.html" %}
+
+{% load  static %}
+
+{% block content %}
+
+<div class="grid-container" style="padding: 5em;">
+    <div class="grid-x grid-margin-x align-center">
+        <div class="cell large-5">
+            <h3 class="cell">Personas en la agenda</h3>
+            <app>
+                <div class="grid-x grid-margin-x">
+                    <div class="cell" v-model="kword">
+                        <input type="text" v-model="kword" placeholder="buscar..">
+                    </div>
+                    <div class="cell">
+                        <ul class="vertical menu">
+                            <li v-for="persona in listaPersonas">
+                                <a href="#">{$ persona.full_name $}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </app>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
